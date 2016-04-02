@@ -23,6 +23,7 @@ juke.factory('PlayerFactory', function ($rootScope) {
   };
 
   player.resume = function () {
+    console.dir(audio);
     audio.play();
     playing = true;
   };

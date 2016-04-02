@@ -16,6 +16,9 @@ juke.config(function ($stateProvider) {
       playlist: function (PlaylistFactory, $stateParams) {
         console.log("stateParams iz", $stateParams);
         return PlaylistFactory.findById($stateParams.id);
+      },
+      songlist: function(SongFactory){
+        return SongFactory.getAll();
       }
     }
   });//end state

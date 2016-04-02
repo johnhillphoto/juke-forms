@@ -1,5 +1,9 @@
 <div>
   <h3>{{ playlist.name }}</h3>
+  <h4>Add to Playlist</h4>
+  <select name="sel" ng-options="song as song.name for song in songlist track by song._id" ng-model="selected.song"></select>
+  <button ng-disabled="!selected.song" class="btn btn-default" ng-click="addSong(selected.song,playlist._id)">add song</button>
+
   <table class='table' ng-show="playlist.songs.length">
     <thead>
       <tr>
