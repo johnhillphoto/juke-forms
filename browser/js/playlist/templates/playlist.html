@@ -1,0 +1,14 @@
+<div>
+  <h3>My Playlist</h3>
+    <div class="list-group">
+      <form novalidate  name="playform" ng-model="Playlist">
+        <input class="form-group" required placeholder="dgdgdg" ng-model="Playlist.name" name="playname" ng-maxlength="16" >
+        <button type="submit" ng-disabled="playform.$invalid" class="btn btn-default" ng-click="submit()">Submit</button>
+      </form>
+      <div ng-show="playform.$invalid && playform.$dirty" class="alert alert-warning">Please enter a name</div>
+      <div>{{Playlist.name}}</div>
+      <div>{{Playlist}}</div>
+      <div>{{playlists[0]}}</div>
+    </div>
+  </div>
+</div>
