@@ -42,7 +42,15 @@
           <section>
             <h4 class="text-muted">PLAYLISTS</h4>
             <p>
-              <a ui-sref="playlist" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus"></span> PLAYLIST</a>
+              <a ui-sref="playlistCreate" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus"></span> PLAYLIST</a>
+            </p>
+            <p class="playlist-item">
+                <div ng-controller="PlaylistCtrl" >
+                  <ul ng-repeat="list in playlists">
+                    <li >
+                      <a ui-sref="playlist({id: list._id})">{{list.name}}</a></li>
+                  </ul>
+                </div>
             </p>
           </section>
         </sidebar>

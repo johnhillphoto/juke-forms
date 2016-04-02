@@ -2,17 +2,23 @@
 
 juke.config(function ($stateProvider) {
 
-  $stateProvider.state('playlist', {
+  $stateProvider.state('playlistCreate', {
     url: '/playlist',
+    templateUrl: '/js/playlist/templates/playlistCreate.html',
+    controller: 'PlaylistCtrl'
+
+  });//end state
+  $stateProvider.state('playlist', {
+    url: '/playlist/:id',
     templateUrl: '/js/playlist/templates/playlist.html',
-    controller: 'PlaylistCtrl',
+    controller: 'PlayListDisplay',
     resolve: {
-      playlist: function (PlaylistFactory) {
-        console.log('state provider');
-        //return PlaylistFactory.fetchAll();
+      playlist: function (PlaylistFactory, $stateParams) {
+        console.log("stateParams iz", $stateParams);
+        return PlaylistFactory.findById($stateParams.id);
       }
     }
-  });
+  });//end state
 
 
 });
